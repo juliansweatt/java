@@ -1,0 +1,187 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Win98; U) [Netscape]">
+   <title>HW 3</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h1>
+Assignment #3</h1>
+<b>Due</b>: Thurs, Feb 15
+
+<h2>Objective</h2>
+
+This assignment will involve practice with characters and strings, using 
+the libraries discussed in class (String, StringBuilder, Character), as 
+well as basic File I/O (with text files).
+
+<h2>Task</h2>
+Write a program in a class called <tt>WebToPigLatin</tt> (filename 
+<tt>WebToPigLatin.java</tt>) that will translate web page content (html 
+files) to Pig Latin versions of the page.
+
+<h2>Requirements</h2>
+
+<h3>1) Command structure</h3>
+
+The program should take its input information through two command line 
+parameters.  The usage format is:
+<pre>
+  java WebToPigLatin <i>inputFile</i> <i>outputFile</i>
+</pre>
+
+Example:
+<pre>
+  java WebToPigLatin page1.html pigpage1.html
+</pre>
+In the above example, the input page is <tt>page1.html</tt>.  The 
+results should be written to the file <tt>pigpage1.html</tt>.
+
+<p>If the command to the program is given incorrectly, print out a usage 
+message like:
+<pre>
+  Usage: java WebToPigLatin inputFile outputFile
+  Must have two command-line parameters
+</pre>
+and abort.
+
+<h3>2) Pig-Latin rules</h3>
+
+For our purposes, we will use the following as the rules for 
+translation of a word into "Pig Latin":
+ 
+<ol>
+<li>A <b>word</b> to be translated is a consecutive sequence of letters 
+(a-z, A-Z) or apostrophes, containing at least one vowel (or y in a 
+vowel position). Examples: <tt>Zebra , doesn't , apple, 
+rhythm</tt></li>
+
+<li>If a word starts with a vowel, the Pig Latin version is the original
+word with "way" added to the end</li>
+
+<li>If a word starts with a consonant, or a series of consecutive
+consonants, the Pig Latin version transfers all consonants up to the first
+vowel to the <b>end</b> of the word, and adds "ay" to the end.</li>
+
+<li>The letter 'y' should be treated as a consonant if it is the first
+letter of a word, but treated as a vowel otherwise.</li>
+
+<li>If the original word is capitalized, the new Pig Latin version of the 
+word should be capitalized in the first letter (i.e. the previous capital 
+letter may not be capitalized any more).</li>
+
+</ol>
+
+</li>
+
+Examples of pig latin translations of words, under these rules:
+<br>&nbsp;
+
+<table BORDER CELLSPACING=2 CELLPADDING=5 >
+<tr><th>Word</th><th>PigLatin version</th></tr>
+
+<tr><td>Flower</td><td>Owerflay</td></tr>
+<tr><td>yellow</td><td>ellowyay</td></tr>
+<tr><td>bypass</td><td>ypassbay</td></tr>
+<tr><td>apple</td><td>appleway</td></tr>
+<tr><td>Igloo</td><td>Iglooway</td></tr>
+<tr><td>string</td><td>ingstray</td></tr>
+<tr><td>Hamburger</td><td>Amburgerhay</td></tr>
+<tr><td>Rhythm</td><td>Ythmrhay</td></tr>
+<tr><td>queen</td><td>ueenqay</td></tr>
+<tr><td>zippity</td><td>ippityzay</td></tr>
+
+</table>
+
+<h3>3) File handling rules</h3>
+
+For the purposes of translating only the CONTENT of an html file (i.e. a 
+web page), please observe the following requirements:
+
+<ol> 
+<li>Anything that appears inside of html tags is not content, so it 
+should not be converted.  Example:
+<pre>
+  &lt;font size="-1" face="Arial, Helvetica, sans-serif">Yadda Yadda&lt;/font>
+</pre>
+In this tag, only "Yadda Yadda" is content. The rest is not translated.
+<br>&nbsp;
+</li>
+
+<li>Any item that fits the pattern of <tt>&amp;<i>text</i>;</tt> is not 
+content. These are special html markers for placing symbols like quotes 
+and ampersands, that otherwise have special meaning to browsers.  
+Example:
+<pre>
+  &amp;nbsp;Hello there		// only "Hello there" is content
+  &amp;quote;Hello there&amp;quote;	// only "Hello there" is content
+</pre>
+</li>
+
+<li>Do not consider punctuation (other than apostrophes) to be parts of 
+words (i.e. 
+they should not be part of word translations).  Punctuation will still 
+appear in the content in the appropriate places, after translation.  
+Example:
+<pre>
+   The attentive, brilliant Java student's friend was happy.
+</pre>
+translates to
+<pre>
+   Ethay attentiveway, illiantbray Avajay udent'sstay iendfray asway appyhay.
+</pre>
+</li>
+
+<li>Numbers on web pages are obviously not translatable, so leave them 
+as-is.<br>&nbsp;
+</li>
+
+<li>Abbreviations with no vowels in them are not translatable, so leave 
+them as-is.<br>&nbsp;
+</li>
+
+<li>Anything from the html file that is not translated to Pig Latin 
+should still appear in the file as-is. i.e. the intent is that the 
+resulting web page should still appear the same as the original, simply 
+with all of the content words converted to Pig Latin.
+</li>
+
+
+</ol>
+
+<hr>
+
+<h2>General Requirements and Hints</h2>
+
+<ul>
+<li>Your code should be readable and well-documented</li>
+<li>You may make use of any of the features of the <tt>String</tt>, 
+<tt>StringBuilder</tt> and <tt>Character</tt> class libraries.  Each of 
+these is in the <tt>java.lang</tt> package.</li>
+<li>For File I/O, recommended libraries are:
+  <ul>
+  <li><tt>java.util.Scanner</tt></li>
+  <li><tt>java.io.FileReader</tt> -- for reading single characters at a time</li>
+  <li><tt>java.io.FileWriter</tt></li>
+  <li><tt>java.util.Formatter</tt></li>
+  </ul>
+</li>
+<li>Pack your program into a <i>runnable</i> jar file called 
+<tt>hw3.jar</tt> for submitting.</li>
+
+</ul>
+
+<hr>
+
+<h3>  
+Submitting:</h3>
+
+Pack the program and source code into a <i>runnable</i> jar file called 
+<tt>hw3.jar</tt> for submitting.
+
+<p>Submit your jar file through the Assignment 3 Canvas link
+
+</body>
+</html>

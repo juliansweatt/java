@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Win98; U) [Netscape]">
+   <title>HW 5</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h2>
+Assignment #5</h2>
+<b>Due</b>: Thurs, Mar 8
+
+<h3>Objective</h3>
+Practice with properties of files and directories, as well as sorting 
+arrays of objects.
+
+<h3>Task</h3>
+
+Create a program that will list the contents of a directory, sorted 
+alphabetically by name or sorted by last modified date.  Files and 
+directories are to be output one per row, with the following information:  
+length (in bytes), last modified date, name.
+
+<h3>Requirements</h3>
+
+<ul>
+<li>Output should look like the sample runs shown below</li>
+
+<li>Input will come into the program through command line arguments. 
+The command format is:
+<pre>
+  java -jar hw5.jar [directory_name] [-a | -l | -s]
+</pre>
+ <ul>
+ <li>The <tt>directory_name</tt> is an optional argument. If not 
+     provided, the current directory is the default</li>
+ <li><tt>-a</tt> means alphabetical sorting, by file or directory 
+     name</li>
+ <li><tt>-l</tt> means sort by "last time modified", ascending order</li>
+ <li><tt>-s</tt> means sort by file length (size), ascending order</li>
+
+ </ul>
+<br>
+</li>
+
+<li>If an error on the command line occurs, print a "usage" message (this 
+is very typical for programs with command-line arguments), which should 
+look like this:
+<pre>
+  usage:  java -jar hw5.jar [directory] [-a | -l | -s]
+          (current directory is default)
+          -a alphabetical sorting
+          -l last time modified sorting
+          -s file size
+</pre>
+If the directory name in the command line is an invalid directory, then 
+print the error message "Invalid directory name" before the usage message, 
+as well.
+</li>
+
+<li>You may assume that no directories or files begin with the 
+<tt>'-'</tt> character</li>
+
+</ul>
+
+<hr>
+<h3>Sample runs</h3>
+
+For these examples, assume that "yadda" is a directory, and "blah" is not.
+
+<h4>Some runs with correct usage</h4>
+
+<pre>
+<b>> java -jar hw5.jar</b>
+    4096  May 26 14:51:35  yadda
+      21  May 26 14:53:39  manifest
+     424  May 27 14:09:03  MyCode$1.class
+     535  May 27 14:09:03  MyCode$2.class
+    2489  May 27 14:09:03  MyCode.class
+    2845  May 27 15:11:31  hw5.jar
+    4391  May 27 14:08:57  MyCode.java
+    4323  May 26 14:48:17  MyCode.java~
+     822  May 26 15:05:12  testcases
+
+<b>> java -jar hw5.jar yadda -a</b>
+       9  May 26 14:51:35  a.txt
+      12  May 26 14:51:22  b.txt
+       7  May 26 14:51:04  c.txt
+
+<b>> java -jar hw5.jar yadda -l</b>
+       7  May 26 14:51:04  c.txt
+      12  May 26 14:51:22  b.txt
+       9  May 26 14:51:35  a.txt
+
+<b>> java -jar hw5.jar yadda -s</b>
+       7  May 26 14:51:04  c.txt
+       9  May 26 14:51:35  a.txt
+      12  May 26 14:51:22  b.txt
+
+</pre>
+
+<h4>Some test runs illustrating error cases</h4>
+
+<pre>
+<b>> java -jar hw5.jar yadda -a -l</b>
+
+usage:  java -jar hw5.jar [directory] [-a | -l | -s]
+        (current directory is default)
+        -a alphabetical sorting
+        -l last time modified sorting
+
+<b>> java -jar hw5.jar yadda -a -x</b>
+
+usage:  java -jar hw5.jar [directory] [-a | -l | -s]
+        (current directory is default)
+        -a alphabetical sorting
+        -l last time modified sorting
+
+<b>> java -jar hw5.jar blah</b>
+Invalid directory name
+
+usage:  java -jar hw5.jar [directory] [-a | -l | -s]
+        (current directory is default)
+        -a alphabetical sorting
+        -l last time modified sorting
+
+<b>> java -jar hw5.jar -a yadda</b>
+
+usage:  java -jar hw5.jar [directory] [-a | -l | -s]
+        (current directory is default)
+        -a alphabetical sorting
+        -l last time modified sorting
+</pre>
+
+<hr>
+
+<h3>Hints and Resources</h3>
+
+<ul>
+<li>Some classes/methods/constructors you may find helpful
+<pre>
+  String.equals(Object)
+  String.charAt(int)
+  String.compareToIgnoreCase(String)
+  File class
+  Arrays.sort(Object[])
+  Arrays.sort(T[], Comparator)
+  Comparator interface
+  SimpleDateFormat(String)
+  Date(long)
+  DateFormat.format(Date)
+</pre>
+</li>
+
+<!--
+<li>See Chapter 14.4 (pages 678 - 682):  "Class File"</li>
+-->
+
+<li>See this article on 
+<a href="http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html">
+Customizing Formats</a>
+ <ul>
+ <li>This page shows some good examples of customizing your own 
+     format for output of dates and times</li>
+ </ul>
+</li>
+
+<li>See the <a href="../notes/sorting.html">notes page on sorting 
+arrays</a></li>
+</ul>
+
+
+<hr>
+
+<h3>
+Submitting:</h3>
+
+Pack up your source code files AND your compiled .class files into a 
+single jar-file called "hw5.jar".  Make this a runnable jar file, so that 
+the program can be run with the command format listed above.
+
+<p>Submit your jar file in the usual way, at the Canvas submission 
+link.
+
+<!--
+E-mail this jar file to me (<b>myers@cs.fsu.edu</b>) by the due date.  
+Your e-mail subject should be <b>HW5-SUBMIT</b>.  Include your name and 
+section in the e-mail body.  Please only submit ONCE, unless you make a 
+mistake and need to correct it (before the due date) -- and minimize 
+this.  Only the last submission will be graded.
+-->
+
+<br>&nbsp;
+</body>
+</html>

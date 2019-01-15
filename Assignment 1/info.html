@@ -1,0 +1,286 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Win98; U) [Netscape]">
+   <title>HW 1</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h2>
+Assignment #1</h2>
+<b>Due</b>: Thurs, Jan 25, by 11:59 PM
+
+<h3>Objective</h3>
+This assignment is intended to help you gain practice with basic Java 
+syntax, including basic procedural programming, functions, arrays, and 
+console I/O.
+
+<h3>Task</h3>
+
+<p>Do the following three exercises, each in a different file.  (These 
+are based on textbook exercises in chapters 5, 6, and 7).
+
+<!--
+ 5.20, 6.26, 
+and 7.17).
+-->
+
+<hr>
+
+
+<br>Your filenames should be
+<ul>
+<li><tt>Pi.java</tt></li>
+<li><tt>Reverse.java</tt></li>
+<li><tt>DiceStats.java</tt></li>
+</ul>
+
+<p>To do the console input for these exercises, use the 
+<tt>java.util.Scanner</tt> class.   For random numbers in the last 
+exercise, you can use class <tt>java.util.Random</tt>.
+
+<p>Declare any methods you write to be <tt>public</tt> and 
+<tt>static</tt>.  You may also use the <tt>java.lang.Math</tt> class in 
+these programs, where needed.  You may assume correct type of user input 
+in these problems.
+
+
+<hr>
+
+<h3>Exercise 1</h3>
+
+Filename: <b><tt>Pi.java</tt></b>
+
+<p>Based on Exercise 5.20
+
+<p>Calculate the value of <i>pi</i> from the infinite series
+<pre>
+ <i>pi</i> = 4 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + ...
+</pre>
+Print a table that shows the value of <i>pi</i> approximated by 
+computing one term of this series, by two terms, by three terms, and so 
+on. Use default precision for output (i.e. do not set any decimal 
+precision).
+
+<p>Start by asking the user how many terms of the series to 
+compute to, and then let the user enter the information.  Use this to 
+print a table of the first N terms of the series (where N is the data 
+entered by the user).  Assume the user's input will be a non-negative 
+integer. (see sample output)
+<br>&nbsp;
+
+
+<h3>Sample Run</h3>
+(Sample user input is underlined)
+
+<pre>
+ Exercise 5.20: 'Approximating PI'
+ Compute to how many terms of the series? <u>20</u>
+ terms   PI approximation
+ 1       4.0
+ 2       2.666666666666667
+ 3       3.466666666666667
+ 4       2.8952380952380956
+ 5       3.3396825396825403
+ 6       2.9760461760461765
+ 7       3.2837384837384844
+ 8       3.017071817071818
+ 9       3.2523659347188767
+ 10      3.0418396189294032
+ 11      3.232315809405594
+ 12      3.058402765927333
+ 13      3.2184027659273333
+ 14      3.0702546177791854
+ 15      3.208185652261944
+ 16      3.079153394197428
+ 17      3.200365515409549
+ 18      3.0860798011238346
+ 19      3.1941879092319425
+ 20      3.09162380666784
+</pre>
+
+<hr>
+
+<h3>Exercise 2</h3>
+
+Filename: <b><tt>Reverse.java</tt></b>
+
+<p>Based on Exercise 6.26
+
+<p>Write a method called <tt>reverseDigits</tt> that takes a long 
+integer value and returns that number with its digits reversed. For 
+example, given the value 7631, the method should return the value 1367 
+(as a long integer).
+
+<p>Write a <tt>main()</tt> routing that enters a loop, in which the user 
+is prompted and allowed to enter any long integer (0 to exit the loop), 
+and the <tt>reverseDigits</tt> method is used to compute and return the 
+reversed number. Print this from the main routine.  See sample run 
+below.
+
+<h3>Sample Run</h3>
+(Sample user input is underlined)
+
+<pre>
+ Please enter a long integer (0 to quit): <u>123456</u>
+
+ The number reversed is: 654321
+
+ Please enter a long integer (0 to quit): <u>8473625145</u>
+
+ The number reversed is: 5415263748
+
+ Please enter a long integer (0 to quit): <u>23456789</u>
+
+ The number reversed is: 98765432
+
+ Please enter a long integer (0 to quit): <u>123456789012345678</u>
+
+ The number reversed is: 876543210987654321
+
+ Please enter a long integer (0 to quit): <u>0</u>
+
+ Goodbye!
+</pre>
+
+<hr>
+
+<h3>Exercise 3</h3>
+
+Filename: <b><tt>DiceStats.java</tt></b>
+
+<p>Based on Exercise 7.17 from the textbook, but expanded
+
+<p>Write a program that does the following:
+
+<ol>
+<li>Ask the user to enter how many dice will constitute one roll.
+(This is based on the idea that different games require different
+numbers of rolls for a "turn".  For example, in Yahtzee, you roll 5
+dice.  In craps, you roll 2 dice.  Etc.) </li>
+
+<li>Ask the user to enter how many rolls they would like to perform</li>
+
+<li>Create and use an array to keep track of how many times each
+possible dice sum appears.  (Essentially, you need a bunch of counters,
+but how many will depend on how many dice are rolled per "turn".  For
+example, 2 dice can come up with a total of 2 through 12.  But 3 dice
+could yield a total of 3 through 18).
+ <ul>
+ <li>Hint: The idea of this array is to be a "frequency array", like in
+     example 7.7 from the book</li>
+ <li>Hint: How many counters will you need?  Well, the lowest possible
+     total is the number of dice rolled (all 1s).  The highest possible
+     total is all 6s, so (6 * number_of_dice).  Use this information to
+     decide on the size of your frequency array.
+ </ul>
+</li>
+
+<li>Use a loop to roll the specified number of dice the desired number
+of times (and calculate the sum of each dice roll).  Use the array to
+count and track the number of times each possible sum appears</li>
+
+<li>Display the results in a table with 3 columns:
+ <ol>
+ <li>the die total</li>
+ <li>the number of times that total appeared</li>
+ <li>the percentage of the total rolls that this sum appeared</li>
+ </ol>
+ Compute and print the percentage to 2 decimal places.
+</li>
+
+</ol>
+
+<h3>Sample Run 1</h3>
+(user input is underlined)
+
+<pre>
+How many dice will constitute one roll? <u>2</u>
+How many rolls? <u>100000</u>
+
+Sum     # of times      Percentage
+
+2       2799            2.80 %
+3       5568            5.57 %
+4       8261            8.26 %
+5       10970           10.97 %
+6       13830           13.83 %
+7       16862           16.86 %
+8       13895           13.90 %
+9       11073           11.07 %
+10      8391            8.39 %
+11      5576            5.58 %
+12      2775            2.78 %
+</pre>
+
+
+<h3>Sample Run 2</h3>
+(user input is underlined)
+
+
+<pre>
+How many dice will constitute one roll? <u>4</u>
+How many rolls? <u>100000</u>
+
+Sum     # of times      Percentage
+
+4       78              0.08 %
+5       291             0.29 %
+6       756             0.76 %
+7       1490            1.49 %
+8       2710            2.71 %
+9       4268            4.27 %
+10      6309            6.31 %
+11      8060            8.06 %
+12      9696            9.70 %
+13      10866           10.87 %
+14      11132           11.13 %
+15      10847           10.85 %
+16      9649            9.65 % 
+17      7963            7.96 % 
+18      6166            6.17 % 
+19      4331            4.33 %
+20      2657            2.66 %
+21      1558            1.56 %
+22      778             0.78 %
+23      309             0.31 %
+24      86              0.09 %
+</pre>               
+
+
+
+<hr>
+
+<h3>Compiling</h3>
+
+Remember that the compile command is "javac", at the unix command 
+prompt.  Compile your code on <tt><b>linprog.cs.fsu.edu</b></tt>, and 
+then run your programs with the "java" command.
+
+<h3>
+Preparing for Submission:</h3>
+
+Pack up your files into a single jar-file on 
+<tt>linprog.cs.fsu.edu</tt> with the <b>jar</b> utility.  Here's the 
+command:
+
+<pre>
+  jar cvf hw1.jar Pi.java Reverse.java DiceStats.java
+</pre>
+
+Or, if you have all your .java files for this one in a single directory 
+(and no other .java files in that location) :
+<pre>
+  jar cvf hw1.jar *.java
+</pre>
+
+<h3>Submitting</h3>
+
+I've created a Canvas submission link for the assignment.  On the 
+Canvas course link, select "Assignments" from the menu, 
+then click the "Assignment 1" link to get to the submission page.
+
+<br>&nbsp;
+</body>
+</html>

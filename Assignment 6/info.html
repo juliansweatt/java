@@ -1,0 +1,194 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Win98; U) [Netscape]">
+   <title>HW 6</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h2>
+Assignment #6</h2>
+<b>Due</b>: Tues, March 27
+
+<h3>Objective</h3>
+This assignment will help you gain basic practice with Graphics and Java2D 
+classes.
+
+<h3>Task</h3>
+
+<p>Do the following 3 exercises, each involving the use of 
+painting with Graphics and/or Graphics2D class features.  Note that each 
+of these should be set up like the examples we saw in class -- the 
+drawings should be done on a custom JPanel that is embedded as the 
+content area of a JFrame.
+
+<hr>
+
+<br>Filenames should be
+<ul>
+<li><tt>Triangles.java</tt></li>
+<li><tt>Snowman.java</tt></li>
+<li><tt>ScreenSaver.java</tt></li>
+</ul>
+
+<h3>Instructions</h3>
+
+<ol> 
+
+<li><b><tt>Triangles.java</tt></b> -- Write an application that draws 
+random triangles. Write your application so that the drawing is done on 
+a JPanel, embedded in a JFrame with starting size 500 x 500.  (Note that 
+JFrames can be resized by the user, just like normal windows in standard 
+computer applications). On your JPanel, you will draw 5 random 
+triangles, each filled with a randomly chosen color. To choose a random 
+color, choose each of the RGB values randomly (range 0-255).  Use class 
+<tt>GeneralPath</tt> to create the triangles, and method <tt>fill</tt> 
+from class <tt>Graphics2D</tt> to draw them.
+
+<p>The triangle endpoints should be chosen chosen so that they could be 
+any valid points within the JPanel.  Note that this is not always in a 
+range of 500 x 500 -- if the application frame is expanded, the panel area 
+will be larger.  Do your drawing in method <tt>paintComponent</tt>. 
+(Notice that this means that refreshes to the panel will result in new 
+random trangles.  For example, resize the window and the internal 
+components will be redrawn, because <tt>paintComponent</tt> will be called 
+again).
+
+<br>&nbsp;
+</li>
+
+<li><b><tt>Snowman.java</tt></b>: Write an application that draws a 
+snowman. The snowman's exact size and position will be based on given 
+proportions and centered in the current JPanel.  Details:
+<ul>
+<li>Build your application as a JPanel embedded in a JFrame.  Set 
+the frame's starting size as 600 x 400. The snowman is drawn on the 
+JPanel</li>
+
+<li>The main body of the snowman should consist of three circles, 
+sitting on top of each other</li>
+
+<li>The bottom circle takes up half of the snowman's height. The middle 
+and top circle take up 2/3 and 1/3 of the remaining height, 
+respectively</li>
+
+<li>Each of these circles is drawn with a random color</li>
+
+<li>The full snowman should take up 3/4 of the panel's height, and it 
+should be centered horizontally and vertically in the panel. (Note: This 
+means the exact locations and sizes of circles will change if the panel 
+is resized)</li>
+
+<li>The snowman should have two eyes (black) drawn in the top circle, 
+aligned proportionally somewhere near the top of the head (i.e. where 
+eyes would naturally go)</li>
+
+<li>The snowman should have two arms (black) drawn coming out of 
+the top part of the middle circle.  They should just be lines that stick 
+out from the middle "body" section, angled upwards.  Draw these so that 
+they adjust proportionally as the window is resized.  (They should 
+always fully appear in the actual panel!)</li>
+
+<li>NO portion of the drawing should ever leave the viewable area of the 
+panel</li>
+</ul>
+Sample screenshots, based on different window sizes:
+<ul>
+<li><a href="h6files/snowman1.png">Screenshot 1</a></li>
+<li><a href="h6files/snowman2.png">Screenshot 2</a></li>
+</ul>
+
+<br>&nbsp;
+</li>
+
+<li><b><tt>ScreenSaver.java</tt></b>: Write an application that simulates a 
+screen saver. The application will randomly draw 50 ovals to the screen 
+(various sizes and locations), then it should refresh every 1 second.
+<p>For the drawing of the ovals, follow these rules:
+ <ul>
+ <li>Draw on a <tt>JPanel</tt> imbedded in a <tt>JFrame</tt>, as before, 
+ and set the starting frame size to 800 x 600.</li>
+ <li>Each run through <tt>paintComponent</tt> should draw 50 random 
+     ovals, which must show up within the JPanel boundaries</li>
+ <li>For each oval, pick a random color</li>
+ <li>For each oval, pick a random paint brush thickness between 1 and 
+     10</li>
+ <li>For each oval, pick a random location within the panel, and a 
+   random size (height/width).  Note that the chosen height/width need 
+   to ensure that the oval remains WITHIN the current JPanel.  i.e. 
+   your ovals should be fully viewable on the currently shown panel 
+   (the only exception is that your ovals might <b>slightly</b> overlap 
+   the panel boundaries due to paintbrush thickness)</li>
+ </ul>
+<p>For the refresh of the screen, you'll need to use class 
+   <tt>javax.swing.Timer</tt>. This class sets up a timer event so that 
+   the <tt>actionPerformed</tt> gets called after a given fixed time 
+   interval.  In your <tt>actionPerformed</tt> method, you can simply 
+   call <tt>repaint()</tt> on your panel, and a new set of ovals will 
+   be drawn.
+<p>See this example for an illustration on the usage of the Timer class:
+<a href="http://www.cs.fsu.edu/~myers/cop3252/notes/examples/gui/Ball.java">
+Bouncing Ball</a>
+</ul>
+
+<br>&nbsp;
+</li>
+
+
+<li><b>General</b>
+ <ul>
+ <li>Any member data (static and instance variables) of classes you 
+     write should be <tt>private</tt></li>
+ <li>Our in-class examples illustrated usage of several Java2D and 
+     drawing concepts, such as the libraries GeneralPath, Color, JPanel 
+     inside a JFrame, paintbrush/line thickness settings, drawing 
+     various shapes -- make sure to refer to these, and the related 
+     libraries in the Java API!</li>
+ <li>Other functions you will find helpful are <tt>getHeight()</tt> and 
+     <tt>getWidth()</tt>, part of every Swing component (inherited from 
+     class <tt>JComponent</tt>)</li>
+ <li>Make sure your code is appropriately documented and easy to read</li>   
+
+ </ul>
+</li>
+</ol>
+
+<!--
+<p>Also, here's a link to the 
+<a href="../notes/examples/gui/Ball.java">bouncing ball</a> 
+example that helps illustrate how the <tt>javax.swing.Timer</tt> class 
+works
+-->
+
+<hr>
+
+<h3>
+Submitting:</h3>
+
+Pack up your files (including source code, as always) into a single 
+jar-file called "hw6.jar".  Since this contains three programs in it, 
+you do NOT need to make it runnable.  Just make sure that when it's 
+unpacked, the following commands will run the executable programs:
+
+<pre>
+  java Triangles
+  java Snowman
+  java ScreenSaver
+</pre>
+ 
+As usual, submit your jar file through the Blackboard submission link.
+
+<!--
+
+
+E-mail this jar file to me (<b>myers@cs.fsu.edu</b>) by the due date.  
+Your e-mail subject should be <b>HW6-SUBMIT</b>.  Include your name and 
+section in the e-mail body.  Please only submit ONCE, unless you make a 
+mistake and need to correct it (before the due date) -- and minimize 
+this.  Only the last submission will be graded.
+-->
+
+<br>&nbsp;
+</body>
+</html>
