@@ -1,0 +1,300 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Win98; U) [Netscape]">
+   <title>HW X</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h2>
+Assignment X - Game Project</h2>
+<b>Due</b>: Wed, Apr 25
+
+<h3>Objective</h3>
+
+Programming in Java involves not only understanding the syntactic rules 
+and constructs of the language, but also the ability to research the 
+libraries that are needed for a task, as well as organizing good 
+object-oriented design.  The Java API is very large and has many pre-built 
+features. After this assignment, you will have some experience looking 
+into existing Java libraries and designing a small program using 
+object-oriented techniques.
+
+<h3>Task</h3>
+
+For this assignment, you will design and implement a game in Java.  This
+project is to be done in groups of 2 people each. The final 
+deliverables will be due at the end of the term.
+
+<br>
+<hr>
+
+
+<h3>Details</h3>
+
+<ol>
+<li>You may choose from a variety of board games or 1-player solo games
+<a href="hwxfiles/gamelist.html">listed here</a>, or you may request a 
+game that is not on the list, but it <i>must be approved in advance</i>. 
+The idea is for various groups to do different games -- but to ensure 
+that more groups will get one of their first choices, we'll allow at 
+most two groups to do any one specific game.
+
+ <ul>
+ <li>Send me an e-mail (myers@cs.fsu.edu) indicating who is working 
+     together, as well as what game you want to do (you should indicate 
+     a second choice, in case your first is already taken).  I will 
+     update choices on the linked chart as choices are made -- first 
+     come first serve.
+ </li>
+
+ <li>If you want to request a game that is not already on the list, 
+  include this in your e-mail, along with a description of 
+  the game and/or link to online instructions for the game.  
+  Essentially, I want to ensure that each group is doing a 
+  game that is of an appropriate level.  (Tic-tac-toe, for example, is too 
+  simple, and we've already done a version of it).
+ </li>
+
+ <li>A good choice of game should be one that has choices to make 
+by players, and at least 2 or 3 GUI controls.  For 
+example, a game like Chutes and Ladders would be a weak choice, because 
+the only player control is to roll the dice -- there are no 
+other controls, and no actual choices to make.</li>
+ </ul>
+
+<br>
+</li>
+
+<li>The minimum requirement is to write a game with a graphic interface 
+as a Java application, which can be played by 1 or more human 
+players on the computer. It should have an intuitive and usable 
+interface, and it should implement the standard set of rules for your 
+chosen game. In the event that you have a game with some rule 
+variations, you should include information in your README file 
+(described below) that clarifies what version of the rules you are 
+implementing.
+<br>&nbsp;</li>
+
+<li><b>General Guidelines for Grading</b>: Since you have the freedom to 
+implement the design, grading for this project will be somewhat 
+subjective.  However, here are some guidelines I will be using:
+ <ul>
+ <li>Programs will be judged on 3 primary factors -- Correct rules 
+     implementation, user interface (GUI), and class/code design
+ <br>&nbsp;</br>
+ </li>
+
+ <li><b>To qualify for an A</b>:  Rules of game implemented correctly, 
+  playable game, well-designed GUI interface that is intuitive for 
+  the user, program fairly robust (erroneous inputs handled, for 
+  instance), well-designed object-oriented code. At least one <i>extra</i> 
+  feature, that goes beyond the basic game rules (Examples: multiple 
+  versions of rules implemented, a save-game feature, etc. If you're not 
+  sure whether a certain feature would satisfy this, ask).
+ <br>&nbsp;</li>
+
+ <li><b>To qualify for a B</b>:  Rules of game implemented 
+  mostly correctly (perhaps a few flaws, but fixable), usable GUI, 
+  playable game, reasonably good code design. 
+ <br>&nbsp;</li>
+
+ <li><b>To qualify for a C</b>: The main aspects of gameplay implemented 
+  correctly, so that the game is more or less playable, even if there 
+  are some flaws or other rules that didn't get implemented.  Some  
+  sort of GUI (even if rough around the edges, and not as user-friendly).
+ <br>&nbsp;</li>
+
+ <li>Due to the fact that some games are harder to implement than others, 
+  the level of difficulty of implementing a game will factor in as well 
+  when judging rules implementations. (For example, chess has more 
+  complicated rules than checkers).
+ <br>&nbsp;
+ </li>
+
+ <li>Roughly, the grading breakdown is:
+  <ul>
+  <li>Rules implementation / gameplay -- 30%</li>
+  <li>User interface (GUI) -- 30%</li>
+  <li>class/code design -- 30%</li>
+  <li>Some extra feature(s), beyond normal game rules -- 10%</li>
+  </ul>
+  <br>
+ </li>
+
+ <li>Notes on these breakdown items:
+  <ul>
+  <li><b>Rules</b><br>
+      Your game needs to adhere to the standard set of rules for the 
+      chosen game. If not a standard well-known game (like chess), make 
+      sure to provide rules or a link to the rules in your README file, 
+      along with any rule variations you are implementing.
+  </li>
+
+  <li><b>User interface</b><br>
+      This will be judged on the overall user experience / user 
+      friendliness. Strive for intuitive and appropriate GUI controls. 
+      Avoid redundancy (extra clicks just for the sake of having extra 
+      controls, buttons, etc).  Also strive for a more attractive and 
+      clean-looking interface that an average person would WANT to use.
+
+      <br>Also, make sure your game runs on a reasonable screen/window 
+         size (like a standard desktop or laptop screen).
+  </li>
+
+  <li><b>Code design</b><br>
+      Code design will be judged on appropriateness of object-oriented 
+      design, modifiability, readability, easiness to debug. Avoid 
+      brute-force copy/paste style coding -- this leads to tedious code
+      that is hard to read, modify, and debug.  (When designing a game 
+      like this, you want to have code that would make it easy to add new 
+      features in the next version, for example).
+  </li>
+  </ul>
+ </li>
+
+<!--
+ <li>Overall, for a better grade, implement a better program!</li>
+-->
+ </ul> 
+<br>&nbsp;</li>
+
+
+<li><b>Guidelines for researching resources</b>
+ <ul>
+ <li>As we've been primarily using Java SE 8 in this class, make sure 
+   your code compiles and runs with the latest update of the Java 8 SDK 
+   (Standard Dev Kit)</li>
+
+ <li>You may use any of the Java libraries in the JavaSE 8 API (unless 
+  you happen to find a package like <tt>java.game.monopoly</tt>, for 
+  instance).</li>
+
+ <li>It would probably be a good idea to look at many other GUI examples 
+  (including the ones we've done in class) and look at the tutorials on 
+  the java.sun web site (now on oracle), to help you find other 
+  techniques and tips for implementing graphic interfaces with 
+  event handling</li>
+
+ <li>If you find a resource that gives you some ideas -- and especially if 
+  you model a portion of your code after another example -- be sure to 
+  cite your source in your documentation</li>
+
+ <li>The coding, however, <b>must be yours</b>! You are to implement 
+  your own game logic (i.e. you may <b>not</b> just find an existing 
+  implementation of a game and use code found on web searches).</li>
+
+ <li>Any actual Java code in your program needs to be generated by you 
+     (and not auto-generated, for example, by NetBeans).</li>
+
+ <li>For GUI components and layouts, you may use Swing libraries, or 
+     you may use Java FX (i.e. embedded XML for the components and 
+     layouts).  If you choose to use the latter, you may have some XML 
+     files generated by the SceneBuilder tool, but again, any Java code 
+     must be yours.</li>
+
+ <li>You may use icons, graphics pictures, sounds, etc that you find
+  online. If and when possible, cite your source, and be sure to pay
+  attention to any copyright notices regarding such resources. (Example: 
+  If you choose a solitaire card game, it would be a good idea to find 
+  image files of cards, for a nicer interface -- it's best to find 
+  public domain images for this sort of thing). </li>
+
+ </ul>
+
+<br>&nbsp;</li>
+
+
+<li><b>Extra Credit Opportunities</b> -- I'm leaving this wide open.  
+There will be plenty of chances to earn extra credit on this assignment. 
+Anything above and beyond the minimum requirements can be done for extra 
+credit. Be sure to list anything extra you do in your README file, so I 
+know to look for it. Here are just a few possible things you could try, 
+just to give you some ideas (but certainly not limited to these):
+ <ul>
+
+ <li>Save/Open feature, for saving games in progress</li>
+
+ <li>For a game with rule variations, implement the ability to play using 
+  one or more of the variations (or a menu to choose rule settings, if 
+  appropriate).</li>
+
+ <li>More creative and fun visual layouts, possibly incorporating graphics, 
+  sounds, animations, etc.</li>
+
+ </ul>
+
+<br>&nbsp; </li>
+
+</ol>
+<hr>
+<h3>Resources</h3>
+
+<ul>
+<li>
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
+Core download page for the Java SDK</a></li>
+
+<li><a href="http://boardgamecentral.com/">Boardgamecentral.com</a> - a 
+site that might help give ideas for games to choose</li>
+
+<li><a href="http://java.sun.com/docs/books/tutorial/reallybigindex.html">
+"The Really Bix Index" of java tutorials</a> - links to tons of tutorials 
+on the java.sun web site.</li>
+
+</ul>
+
+<hr>
+
+<h3>
+Deliverables:</h3>
+
+You should pack all relevant files for your 
+assignment into one jar file (named <tt>hwx.jar</tt>).  The jar 
+file should contain:
+<ul>
+<li>All necessary .class files and resource files that make your program 
+ work</li>
+
+<li>All source code files (.java files) for your program</li>
+
+<li>A <tt>README</tt> file (this can be in text format or in html 
+format) that contains any extra documentation for your project. This
+should include
+ <ul>
+ <li>Any details regarding instructions for the game that are not obvious 
+ from the set of standard known instructions</li>
+ <li>A description of how to use the interface</li>
+ <li>Any other important details about your implementation, how to run 
+the program, etc</li>
+ <li>Descriptions of any extra features implemented</li>
+ <li>A description of the separation of work between partners (who was 
+     responsible for what pieces of the program).</li>
+ </ul>
+</li>
+
+</ul>
+
+Your <tt>jar</tt> file should also be runnable.  This means that if you 
+wrote it as an application, I should be able to play your game with the 
+command:
+<pre>
+  java -jar hwx.jar
+</pre>
+
+Possible exception: If you happen to do anything that involves mulitple 
+programs (like a client/server implementation), then you can pack those 
+as separate runnable jar files, then put those into the main archive.  
+Make sure any such details are noted in your README.
+
+
+<p>Submit your assignment via the Canvas submission links. 
+Only ONE student in the group needs to physically submit the file,
+but make sure both names are included in your submission.  
+<b>Remember to INCLUDE YOUR SOURCE CODE in your jar file!</b>
+
+
+
+</body>
+</html>
